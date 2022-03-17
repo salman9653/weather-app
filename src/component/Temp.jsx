@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import WeatherCard from './WeatherCard';
 
 const Temp = () => {
     const api_key = "89594c44132fba6bc4d4697545bb9efd"
@@ -42,57 +43,7 @@ const Temp = () => {
                     <button className="searchButton" onClick={getWeatherInfo}>Search</button>
                 </div>
             </div>
-            <section className="widget">
-                <div className="weatherIcon">
-                    <i className={'wi wi-day-sunny'}></i>
-                </div>
-                <div className="weatherInfo">
-                    <div className="temperature">
-                        <span> &deg;</span>
-                    </div>
-                    <div className="description">
-                        <div className="weatherCondition">
-                            sunny
-                        </div>
-                        <div className="place">
-                            Delhi, In
-                        </div>
-                    </div>
-                </div>
-                <div className="date">
-                    {new Date().toLocaleString()}
-                </div>
-                <div className="extra-temp">
-                    <div className="temp-info-minmax">
-                        <div className="two-sided-section">
-                            <p><i className={"wi wi-sunset"}></i></p>
-                            <p className="extra-info-leftside">
-                                19:19 <br /> Sunset
-                            </p>
-                        </div>
-                        <div className="two-sided-section">
-                            <p><i className={"wi wi-humidity"}></i></p>
-                            <p className="extra-info-leftside">
-                                42% <br /> Humidity
-                            </p>
-                        </div>
-                    </div>
-                    <div className="weather-extra-info">
-                        <div className="two-sided-section">
-                            <p><i className={"wi wi-rain"}></i></p>
-                            <p className="extra-info-leftside">
-                                19:19 <br /> Pressure
-                            </p>
-                        </div>
-                        <div className="two-sided-section">
-                            <p><i className={"wi wi-strong-wind"}></i></p>
-                            <p className="extra-info-leftside">
-                                42% <br /> Speed
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <WeatherCard info={tempInfo} />
         </>
     )
 }
