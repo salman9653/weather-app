@@ -12,11 +12,11 @@ const Temp = () => {
             const data = await res.json();
 
             const { temp, humidity, pressure } = data.main;
-            const { main: weatherMood } = data.weather[0];
+            const { main: weatherMood, icon } = data.weather[0];
             const { name } = data;
             const { speed } = data.wind;
             const { country, sunset } = data.sys
-            const myWeatherInfo = { temp, humidity, pressure, weatherMood, name, speed, country, sunset };
+            const myWeatherInfo = { temp, humidity, pressure, weatherMood, icon, name, speed, country, sunset };
 
             setTempInfo(myWeatherInfo);
 
@@ -38,7 +38,7 @@ const Temp = () => {
                         className='searchTerm'
                         value={searchCity}
                         onChange={(e) => { setSearchCity(e.target.value) }}
-                        placeholder='search...'
+                        placeholder='Search Location'
                     />
                     <button className="searchButton" onClick={getWeatherInfo}>Search</button>
                 </div>
